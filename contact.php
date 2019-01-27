@@ -1,16 +1,12 @@
 <?php
-echo <<<_END
+	exec("php mailuser.php > /dev/null 2>&1 &");
+	header("Refresh: 3; url=index.html");
+?>
 <html>
 	<head>
-		<title>Email Sent</title>
+		<div class="jumbotron text-xs-center">
+  			<h1 class="display-3">Thank You!</h1>
+  			<p class="lead"><strong>Please check your email</strong> for further communications with Ryan.</p>
+		</div>	
 	</head>
-	<body>
-		Thanks!
-	</body>
 </html>
-_END;
-
-if($_POST["message"]) {
-    mail("rrmhearts@gmail.com", "Form to email message", $_POST["message"], "From: {$_POST["email"]}");
-}
-?>
