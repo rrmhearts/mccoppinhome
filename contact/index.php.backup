@@ -2,8 +2,16 @@
 <html lang="en">
 <head>
 <?php
-        exec("php mailuser.php > /dev/null 2>&1 &");
-        header("Refresh: 5; url=../index.html");
+	$subject = $_POST['subject'];
+	$message = $_POST['message'];
+	$name = $_POST['name'];
+	$email = $_POST['email'];
+        exec("php mailuser.php '".addslashes($subject)."' "
+			      "'".addslashes($message)."' "
+			      "'".addslashes($name)."' "
+			      "'".addslashes($email)."'  > /dev/null 2>&1 &");
+
+        header("Refresh: 4; url=../index.html");
 ?>
 	<title>Thank You</title>
 	<meta charset="UTF-8">
@@ -30,7 +38,7 @@
 	<div class="bg-contact2" style="background-image: url('images/bg-01.jpg');">
 		<div class="container-contact2">
 				<div class="jumbotron text-xs-center">
-                        		<h1 class="display-3">Thank You <?php echo $_POST['name'] ?>!</h1>
+                        		<h1 class="display-3">Thank You!</h1>
                        			 <p class="lead"><strong>Please check your email</strong> for further communications with Ryan.</p>
                 		</div>
 		</div>
