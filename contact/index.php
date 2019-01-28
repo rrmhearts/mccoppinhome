@@ -3,7 +3,7 @@
 <head>
 <?php
         exec("php mailuser.php > /dev/null 2>&1 &");
-        header("Refresh: 3; url=../index.html");
+        header("Refresh: 5; url=../index.html");
 ?>
 	<title>Thank You</title>
 	<meta charset="UTF-8">
