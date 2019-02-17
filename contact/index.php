@@ -2,10 +2,15 @@
 <html lang="en">
 <head>
 <?php
-        exec("php mailuser.php > /dev/null 2>&1 &");
+        exec("php mailuser.php '".addslashes($name)."' ".
+                              "'".addslashes($email)."' ".
+                              "'".addslashes($subject)."' ".
+                              "'".addslashes($message)."'  > /dev/null 2>&1 &");
+	
+//        exec("php -f mailuser.php \"{$name}\" \"{$email}\" \"{$subject}\" \"{$message}\" > /dev/null 2>&1 &");
         header("Refresh: 5; url=../index.html");
 ?>
-	<title>Thank You</title>
+	<title>Thank You <?php echo $name ?> </title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->

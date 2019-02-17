@@ -6,9 +6,9 @@
 	$message = $_POST['message'];
 	$name = $_POST['name'];
 	$email = $_POST['email'];
-        exec("php mailuser.php '".addslashes($subject)."' "
-			      "'".addslashes($message)."' "
-			      "'".addslashes($name)."' "
+        exec("php mailuser.php '".addslashes($subject)."' ".
+			      "'".addslashes($message)."' ".
+			      "'".addslashes($name)."' ".
 			      "'".addslashes($email)."'  > /dev/null 2>&1 &");
 
         header("Refresh: 4; url=../index.html");
