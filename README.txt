@@ -1,4 +1,6 @@
 Personal site based on HTML5UP template.
+[Link to website](https://www.mccoppinhome.com "McCoppin Home")
+
 
 Credits:
 
