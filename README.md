@@ -1,6 +1,9 @@
 Personal site based on HTML5UP template.
 
-Credits:
+[Link to website](http://www.mccoppinhome.com "McCoppin Home")
+
+
+Credits by HTML5UP:
 
 	Demo Images:
 		Unsplash (unsplash.com)
