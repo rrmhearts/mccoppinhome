@@ -1,17 +1,13 @@
-Personal site based on HTML5UP template.
+# McCoppin
+
+Personal site. Using **Gulp** to build from SCSS, JS and minimize.
 
 [Link to website](http://www.mccoppinhome.com "McCoppin Home")
 
+Icons:
+	Font Awesome (fontawesome.io)
 
-Credits by HTML5UP:
-
-	Demo Images:
-		Unsplash (unsplash.com)
-
-	Icons:
-		Font Awesome (fontawesome.io)
-
-	Other:
-		jQuery (jquery.com)
-		Scrollex (github.com/ajlkn/jquery.scrollex)
-		Responsive Tools (github.com/ajlkn/responsive-tools)
+JavScript:
+	jQuery (jquery.com)
+	Scrollex (github.com/ajlkn/jquery.scrollex)
+	Responsive Tools (github.com/ajlkn/responsive-tools)

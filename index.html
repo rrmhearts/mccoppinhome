@@ -1,15 +1,13 @@
 <!DOCTYPE HTML>
-<!--
-	Read Only by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
 		<title>McCoppin Home</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+	    <!-- build:css -->
+		<link rel="stylesheet" href="assets/css/app.css" />
+	    <!-- endbuild -->
+
 		<link rel="icon" type="image/png" href="/favicon.png"/>
 	</head>
 	<body class="is-preload">
@@ -17,8 +15,8 @@
 		<!-- Header -->
 			<section id="header">
 				<header>
-					<span class="image avatar"><img src="images/ryanbaby.jpg" alt="" /></span>
-					<h1 id="logo"><a href="about/index.html">Ryan McCoppin</a></h1>
+					<span class="image avatar"><img src="assets/images/ryanbaby.jpg" alt="" /></span>
+					<h1 id="logo">Ryan McCoppin</h1> <!-- Retired about page-->
 					<p>Husband. Engineer. <br />
 					Dad. Beard Tamer</p>
 				</header>
@@ -50,7 +48,7 @@
 						<!-- About -->
 							<section id="about">
 								<div class="image main" data-position="center">
-									<img src="images/mountain.jpg" alt="" />
+									<img src="assets/images/mountain.jpg" alt="" />
 								</div>
 								<div class="container">
 									<header class="major">
@@ -83,21 +81,21 @@ Most importantly, I am a Christian. I've spent time as a <a href="https://mccopp
 									<p>Keeping up to date on my life? Here is some of the latest news in the McCoppin clan.</p>
 									<div class="features">
 										<article>
-											<a href="#" class="image"><img src="images/familyadopt.jpg" alt="" /></a>
+											<a href="#" class="image"><img src="assets/images/familyadopt.jpg" alt="" /></a>
 											<div class="inner">
 												<h4>Adopting</h4>
 												<p>We've been fostering since 2017 or so. Our second foster child has become our own child. We adopted her in March 2019. We are so thankful to have the privilege of calling her our daughter.</p>
 											</div>
 										</article>
 										<article>
-											<a href="#" class="image"><img src="images/webdev.png" alt="" /></a>
+											<a href="#" class="image"><img src="assets/images/webdev.png" alt="" /></a>
 											<div class="inner">
 												<h4>Web Development</h4>
 												<p>Moving from firmware development to a web development role at work. They realize I can quickly come up to speed in various fields of computer science.</p>
 											</div>
 										</article>
 										<article>
-											<a href="#" class="image"><img src="images/familybible.jpg" alt="" /></a>
+											<a href="#" class="image"><img src="assets/images/familybible.jpg" alt="" /></a>
 											<div class="inner">
 												<h4>Bible Teacher</h4>
 												<p>I've been teaching the Bible since around 2009 at various levels. For the past five years I've been teaching exegetically through books twice a month. We've been though Galatians, Ephesians, James, Daniel, the Parables of Jesus, and 1 John (current) in that time.</p>
@@ -127,15 +125,6 @@ Most importantly, I am a Christian. I've spent time as a <a href="https://mccopp
 											</div>
 										</div>
 									</form>
-<!-- <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_donations" />
-<input type="hidden" name="business" value="HC3RYLT2MDETC" />
-<input type="hidden" name="currency_code" value="USD" />
-<input type="image" src="http://mccoppinhome.com/images/donate.png" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" /> 
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-</form>
--->
 								</div>
 							</section>
 
@@ -150,13 +139,12 @@ Most importantly, I am a Christian. I've spent time as a <a href="https://mccopp
 								<input type="hidden" name="cmd" value="_donations" />
 								<input type="hidden" name="business" value="HC3RYLT2MDETC" />
 								<input type="hidden" name="currency_code" value="USD" />
-								<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-								<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+								<input type="image" src="assets/images/coffee.png" name="submit" title="Support open source!" alt="Donate with PayPal button" />
+								<img alt="" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
 							</form>
 
 								</li>
 								<li>&copy; Ryan McCoppin. All rights reserved.</li>
-								<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 							</ul>
 						</div>
 					</section>
@@ -164,13 +152,18 @@ Most importantly, I am a Christian. I've spent time as a <a href="https://mccopp
 			</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/vendor/jquery.min.js"></script>
+			<script src="assets/js/vendor/jquery.scrollex.min.js"></script>
+			<script src="assets/js/vendor/jquery.scrolly.min.js"></script>
+			<script src="assets/js/vendor/browser.min.js"></script>
+			<script src="assets/js/vendor/breakpoints.min.js"></script>
+		
+			<!-- build:jsutil -->
 			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<!-- endbuild -->
+			<!-- build:jsapp -->
+			<script src="assets/js/app.js"></script>
+			<!-- endbuild -->
 
 	</body>
 </html>
