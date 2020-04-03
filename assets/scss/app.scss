@@ -1,9 +1,11 @@
+//@import 'bootstrap/bootstrap';
 @import 'libs/vars';
 @import 'libs/functions';
 @import 'libs/mixins';
 @import 'libs/vendor';
 @import 'libs/breakpoints';
 @import 'libs/html-grid';
+
 @import url('../fonts/font-awesome/css/font-awesome.min.css');
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400&display=swap');
 
@@ -365,9 +367,6 @@
 				}
 			}
 		}
-	}
-
-	footer {
 	}
 
 /* Form */

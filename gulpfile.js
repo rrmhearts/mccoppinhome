@@ -14,7 +14,13 @@ var gulp = require('gulp'),
 
 // Clean task
 gulp.task('clean', function() {
-  return del(['dist', './assets/css/app.css']);
+  return del([
+    'dist',
+    './assets/css/app.css',
+    './assets/js/vendor',
+    './assets/scss/bootstrap',
+    './assets/fonts'
+  ]);
 });
 
 // Copy third party libraries from node_modules into /vendor
@@ -23,7 +29,7 @@ gulp.task('vendor:js', function() {
     './node_modules/bootstrap/dist/js/*',
     './node_modules/jquery/dist/*',
     '!./node_modules/jquery/dist/core.js',
-    './node_modules/popper.js/dist/umd/popper.*'
+    './node_modules/jquery.scrollex/*'
   ])
     .pipe(gulp.dest('./assets/js/vendor'));
 });
@@ -48,12 +54,10 @@ gulp.task('vendor:build', function() {
   var jsStream = gulp.src([
     './assets/js/vendor/bootstrap.bundle.min.js',
     './assets/js/vendor/jquery.min.js',
-    './assets/js/vendor/popper.min.js',
-    './assets/js/vendor/breakpoints.min.js',
-    './assets/js/vendor/browser.min.js',
     './assets/js/vendor/jquery.scrollex.min.js',
-    './assets/js/vendor/jquery.scrolly.min.js',
-
+    './assets/js/lib/breakpoints.min.js',
+    './assets/js/lib/browser.min.js',
+    './assets/js/lib/jquery.scrolly.min.js'
   ])
     .pipe(gulp.dest('./dist/assets/js/vendor'));
   var fontStream = gulp.src(['./assets/fonts/font-awesome/**/*.*']).pipe(gulp.dest('./dist/assets/fonts/font-awesome'));
