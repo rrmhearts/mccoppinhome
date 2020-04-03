@@ -19,6 +19,7 @@ gulp.task('clean', function() {
     './assets/css/app.css',
     './assets/js/vendor',
     './assets/scss/bootstrap',
+    './assets/css/bootstrap',
     './assets/fonts'
   ]);
 });
