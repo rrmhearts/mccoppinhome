@@ -1,6 +1,7 @@
 "use strict";
 
-var gulp = require('gulp'),
+let gulp = require('gulp'),
+  babel = require('gulp-babel'),
   sass = require('gulp-sass'),
   del = require('del'),
   uglify = require('gulp-uglify'),
@@ -65,6 +66,9 @@ gulp.task('js:minify', function () {
   return gulp.src([
     './assets/js/app.js'
   ])
+    .pipe(babel({
+      presets: ['@babel/preset-env']
+    }))
     .pipe(uglify())
     .pipe(rename({
       suffix: '.min'

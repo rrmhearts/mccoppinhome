@@ -13,9 +13,12 @@ function openNav() {
   }
   
   function toggle() {
-      console.log("toggle: ", document.getElementById("mySidenav").style);
-      if (document.getElementById("mySidenav").style.width === "0px") 
-          openNav();
-      else
-          closeNav();
+    let side = document.getElementById("mySidenav");
+    let style = window.getComputedStyle(side);
+    let width = style.getPropertyValue('width');
+    console.log("toggle: ", width);
+    if (width === "0px") 
+        openNav();
+    else
+        closeNav();
   }

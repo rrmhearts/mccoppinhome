@@ -1,0 +1,109 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 35px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+  transition: background-color .5s;
+}
+
+body header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: black;
+  padding: 0;
+  margin-top: 0;
+  height: 35px;
+  color: white;
+  transition: margin-left .5s;
+}
+
+body header #open {
+  float: left;
+  width: 35px;
+  background-color: #327460;
+  height: 100%;
+  text-align: center;
+  line-height: 35px;
+}
+
+body header #open:hover {
+  cursor: pointer;
+}
+
+body header h3 {
+  padding-top: 7px;
+  padding-left: 20px;
+  margin: 0;
+  background-position: center;
+  display: inline;
+  line-height: 35px;
+}
+
+body header h3 a {
+  color: white;
+  text-decoration: none;
+}
+
+body .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #327460;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+body .sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+  font-size: 18px;
+}
+
+body .sidenav a:hover {
+  color: #e49d03;
+}
+
+body .sidenav #photo {
+  width: 150px;
+  height: auto;
+  border-radius: 80%;
+}
+
+body #main {
+  transition: margin-left .5s;
+}
+
+body #main #headerImage {
+  background-size: 100%;
+}
+
+body #main #headerImage img {
+  width: 100%;
+}
+
+body #main section {
+  padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  body .sidenav {
+    padding-top: 15px;
+  }
+  body .sidenav a {
+    font-size: 18px;
+  }
+}
