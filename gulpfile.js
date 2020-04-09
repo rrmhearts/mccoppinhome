@@ -17,72 +17,40 @@ gulp.task('clean', function() {
   return del([
     'dist',
     './assets/css/app.css',
-    './assets/js/vendor',
-    './assets/scss/bootstrap',
-    './assets/css/bootstrap',
     './assets/fonts'
   ]);
 });
 
-// Copy third party libraries from node_modules into /vendor
-gulp.task('vendor:js', function() {
-  return gulp.src([
-    './node_modules/bootstrap/dist/js/*',
-    './node_modules/jquery/dist/*',
-    '!./node_modules/jquery/dist/core.js',
-    './node_modules/jquery.scrollex/*'
-  ])
-    .pipe(gulp.dest('./assets/js/vendor'));
-});
-
 // Copy font-awesome from node_modules into /fonts
-gulp.task('vendor:fonts', function() {
+gulp.task('fonts', function() {
   return  gulp.src([
     './node_modules/font-awesome/**/*',
     '!./node_modules/font-awesome/{less,less/*}',
-    '!./node_modules/font-awesome/{scss,scss/*}',
+    '!./node_modules/font-awesome/{sass,sass/*}',
     '!./node_modules/font-awesome/.*',
     '!./node_modules/font-awesome/*.{txt,json,md}'
   ])
     .pipe(gulp.dest('./assets/fonts/font-awesome'))
 });
 
-// vendor task
-gulp.task('vendor', gulp.parallel('vendor:fonts', 'vendor:js'));
-
-// Copy vendor's js to /dist
-gulp.task('vendor:build', function() {
-  var jsStream = gulp.src([
-    './assets/js/vendor/bootstrap.bundle.min.js',
-    './assets/js/vendor/jquery.min.js',
-    './assets/js/vendor/jquery.scrollex.min.js',
-    './assets/js/lib/breakpoints.min.js',
-    './assets/js/lib/browser.min.js',
-    './assets/js/lib/jquery.scrolly.min.js'
-  ])
-    .pipe(gulp.dest('./dist/assets/js/vendor'));
-  var fontStream = gulp.src(['./assets/fonts/font-awesome/**/*.*']).pipe(gulp.dest('./dist/assets/fonts/font-awesome'));
-  return merge (jsStream, fontStream);
+gulp.task('build', function() {
+  var fontStream = gulp.src(['./assets/fonts/font-awesome/**/*.*'])
+    .pipe(gulp.dest('./dist/assets/fonts/font-awesome'));
+  return fontStream;
 })
 
-// Copy Bootstrap SCSS(SASS) from node_modules to /assets/scss/bootstrap
-gulp.task('bootstrap:scss', function() {
-  return gulp.src(['./node_modules/bootstrap/scss/**/*'])
-    .pipe(gulp.dest('./assets/scss/bootstrap'));
-});
-
-// Compile SCSS(SASS) files
-gulp.task('scss', gulp.series('bootstrap:scss', function compileScss() {
-  return gulp.src(['./assets/scss/*.scss'])
+// Compile sass(SASS) files
+gulp.task('sass', function compilesass() {
+  return gulp.src(['./assets/sass/*.sass'])
     .pipe(sass.sync({
       outputStyle: 'expanded'
     }).on('error', sass.logError))
     .pipe(autoprefixer())
     .pipe(gulp.dest('./assets/css'))
-}));
+});
 
 // Minify CSS
-gulp.task('css:minify', gulp.series('scss', function cssMinify() {
+gulp.task('css:minify', gulp.series('sass', function cssMinify() {
   return gulp.src("./assets/css/app.css")
     .pipe(cleanCSS())
     .pipe(rename({
@@ -95,8 +63,7 @@ gulp.task('css:minify', gulp.series('scss', function cssMinify() {
 // Minify Js
 gulp.task('js:minify', function () {
   return gulp.src([
-    './assets/js/app.js',
-    './assets/js/util.js'
+    './assets/js/app.js'
   ])
     .pipe(uglify())
     .pipe(rename({
@@ -110,8 +77,7 @@ gulp.task('js:minify', function () {
 gulp.task('replaceHtmlBlock', function () {
   return gulp.src(['*.html'])
     .pipe(htmlreplace({
-      'jsapp': 'assets/js/app.min.js',
-      'jsutil': 'assets/js/util.min.js',
+      'js': 'assets/js/app.min.js',
       'css': 'assets/css/app.min.css'
     }))
     .pipe(gulp.dest('dist/'));
@@ -130,7 +96,7 @@ gulp.task('dev', function browserDev(done) {
       baseDir: "./dist"
     }
   });
-  gulp.watch(['assets/scss/*.scss','assets/scss/**/*.scss','!assets/scss/bootstrap/**'], gulp.series('css:minify', function cssBrowserReload (done) {
+  gulp.watch(['assets/sass/*.sass','assets/sass/**/*.sass'], gulp.series('css:minify', function cssBrowserReload (done) {
     browserSync.reload();
     done(); //Async callback for completion.
   }));
@@ -143,7 +109,7 @@ gulp.task('dev', function browserDev(done) {
 });
 
 // Build task
-gulp.task("build", gulp.series(gulp.parallel('css:minify', 'js:minify', 'vendor'), 'vendor:build', function copyAssets() {
+gulp.task("build", gulp.series(gulp.parallel('css:minify', 'js:minify', 'fonts'), 'build', function copyAssets() {
   return gulp.src([
     '*.html',
     'favicon.png',

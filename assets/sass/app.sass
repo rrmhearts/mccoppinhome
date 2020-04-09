@@ -1,0 +1,77 @@
+$primary: rgb(50, 116, 96)
+$accent: #e49d03
+html 
+	scroll-behavior: smooth 
+	scroll-padding-top: 35px 
+
+body 
+	margin: 0 
+	font-family: "Lato", sans-serif 
+	transition: background-color .5s 
+	header 
+		position: fixed 
+		left: 0 
+		top: 0 
+		width: 100% 
+		background-color: black 
+		padding: 0 
+		margin-top: 0 
+		height: 35px 
+		color: white 
+		transition: margin-left .5s 
+		#open 
+			float: left 
+			width: 35px 
+			background-color: $primary
+			height: 100% 
+			text-align: center 
+			line-height: 35px 
+			&:hover 
+				cursor: pointer 
+		h3 
+			padding-top: 7px 
+			padding-left: 20px 
+			margin: 0 
+			background-position: center 
+			display: inline 
+			line-height: 35px 
+	.sidenav 
+		height: 100% 
+		width: 0 
+		position: fixed 
+		z-index: 1 
+		top: 0 
+		left: 0 
+		background-color: $primary
+		overflow-x: hidden 
+		transition: 0.5s 
+		padding-top: 60px 
+		a 
+			padding: 8px 8px 8px 32px 
+			text-decoration: none 
+			font-size: 25px 
+			color: white 
+			display: block 
+			transition: 0.3s 
+			font-size: 18px 
+			&:hover 
+				color: $accent
+		#photo 
+			width: 150px 
+			height: auto 
+			border-radius: 80% 
+	#main 
+		transition: margin-left .5s 
+		#headerImage 
+			margin: 0 
+			padding: 0 
+			object-fit: cover 
+			width: 100% 
+			height: 100%
+		section
+			padding: 16px
+	@media screen and (max-height: 450px)
+		.sidenav
+			padding-top: 15px
+			a
+				font-size: 18px
