@@ -74,7 +74,13 @@ body .sidenav a {
 }
 
 body .sidenav a:hover {
-  color: #e49d03;
+  background-color: white;
+  color: #327460;
+}
+
+body .sidenav a.active {
+  background-color: white;
+  color: #327460;
 }
 
 body .sidenav #photo {
