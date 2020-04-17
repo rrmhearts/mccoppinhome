@@ -150,4 +150,36 @@
 			}
 		});
 
+        
+function Weather() {
+    var apiKey = '47a79583f1d723dea4261001294273f5'; // free account
+    var city = 'Dayton';
+    var state = 'Ohio';
+
+    var desc = document.getElementById('rm-desc');
+    var temp = document.getElementById('rm-temp');
+    //var details = document.getElementById('rm-details');
+    var icon = document.getElementById('rm-icon');
+  
+    function kToF(temp) {
+        return (temp -273.15) * 9/5 + 32
+      };
+
+    fetch("https://api.openweathermap.org/data/2.5/weather?q="+city+","+state+"&appid="+apiKey)
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(weather) {
+            //desc.textContent = weather.weather[0].description;
+            temp.textContent = kToF(weather.main.temp).toFixed(0);
+            icon.setAttribute('src', "http://openweathermap.org/img/wn/"+weather.weather[0].icon+"@2x.png");
+            return;
+        })
+        .catch(function(err) {
+            console.log(err);
+        });    
+  
+  }
+  Weather();
+  
 })(jQuery);

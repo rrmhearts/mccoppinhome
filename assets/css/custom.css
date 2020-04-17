@@ -1,0 +1,28 @@
+#weather {
+  height: 90px;
+  width: 90px;
+  background-color: rgba(74, 202, 168, 0.9);
+  border-radius: 50px;
+  margin: 0;
+  position: fixed;
+  right: 80px;
+  top: 55px;
+  z-index: 289;
+}
+
+#weather #rm-temp {
+  color: #333;
+  margin: 0;
+  padding: 0;
+  left: 31px;
+  top: 50px;
+  position: relative;
+}
+
+#weather #rm-icon {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  top: -55px;
+  left: -5px;
+}

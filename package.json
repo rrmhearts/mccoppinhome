@@ -4,6 +4,8 @@
   "description": "Personal site based on HTML5UP template.",
   "main": "gulpfile.js",
   "scripts": {
+    "build": "gulp",
+    "start": "gulp dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
