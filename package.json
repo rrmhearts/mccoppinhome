@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-casper",
-  "description": "GatsbyJS starter that themed with the Casper theme from Ghost.",
-  "version": "1.0.7",
-  "author": "Hays Clark <hays.clark@gmail.com>",
+  "name": "mccoppinhome",
+  "description": "McCoppin Home",
+  "version": "1.0.0",
+  "author": "Ryan McCoppin <rrmhearts@gmail.com>",
   "dependencies": {
     "babel-eslint": "^10.1.0",
     "classnames": "^2.2.6",
@@ -28,7 +28,7 @@
     "gatsby-transformer-json": "^2.3.4",
     "gatsby-transformer-remark": "^2.7.5",
     "lodash": "^4.17.15",
-    "moment": "^2.24.0",
+    "moment": "2.18.1",
     "prismjs": "^1.20.0",
     "react": "^16.13.1",
     "react-disqus-comments": "^1.4.0",
