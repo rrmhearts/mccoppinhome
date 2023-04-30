@@ -23,7 +23,7 @@
     "jquery.scrollex": "^0.2.1"
   },
   "devDependencies": {
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.29.1",
     "del": "^3.0.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^4.1.0",
